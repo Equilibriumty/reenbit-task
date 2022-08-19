@@ -1,0 +1,37 @@
+.chatMessageReceiver .chatMessageSender {
+  box-sizing: border-box;
+  padding: 15px;
+  align-items: center;
+
+  & .chatMessageText {
+    max-width: 30%;
+
+    margin-left: 10px;
+    display: inline-block;
+    border-radius: 40px;
+    background-color: #3c4252;
+    color: white;
+    padding: 15px;
+  }
+}
+
+.chatMessageReceiver {
+  text-align: right;
+
+  & .chatMessageText {
+    background-color: #e0e0e0;
+    color: black;
+  }
+}
+
+.chatMessageSender {
+  & .chatMessageMain {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.chatMessageTime {
+  margin: 0;
+  color: #b1b1b1;
+}

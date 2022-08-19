@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Chat from './pages/Chat';
 
 function App() {
   return (
     <div className='App'>
-      <h1></h1>
+      <Routes>
+        <Route path='/chats' element={<Chat />} />
+      </Routes>
     </div>
   );
 }

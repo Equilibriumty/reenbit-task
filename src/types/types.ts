@@ -16,3 +16,7 @@ export type Message = {
   time: string;
   text: string;
 };
+
+export type DataAction = Data & {
+  updateMessages: (message: Message) => void;
+};

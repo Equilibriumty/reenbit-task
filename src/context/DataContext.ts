@@ -1,4 +1,6 @@
 import React from 'react';
-import { Data } from '../types/types';
+import { Data, DataAction } from '../types/types';
 
-export const DataContext = React.createContext<Data | null>(null);
+export const DataContext = React.createContext<DataAction | undefined>(
+  undefined
+);

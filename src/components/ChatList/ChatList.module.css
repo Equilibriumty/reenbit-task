@@ -1,0 +1,12 @@
+.chatList {
+  height: calc(100vh - 175px);
+  overflow: auto;
+}
+
+.chatListTitle {
+  font-weight: 400;
+  font-size: 32px;
+  color: #009ef0;
+
+  margin: 50px 20px;
+}

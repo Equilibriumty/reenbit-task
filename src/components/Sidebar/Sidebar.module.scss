@@ -1,12 +1,21 @@
+// .sidebar {
+//   box-sizing: border-box;
+//   position: fixed;
+//   height: 100%;
+//   overflow: auto;
+//   width: 400px;
+//   border-right: 1px solid #b1b1b1;
+// }
+
 .sidebar {
-  box-sizing: border-box;
   position: fixed;
-  height: 100%;
-  overflow: auto;
-  width: 400px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  overflow-x: hidden;
   border-right: 1px solid #b1b1b1;
 }
-
 .sidebarHeader {
   height: 175px;
   box-sizing: border-box;

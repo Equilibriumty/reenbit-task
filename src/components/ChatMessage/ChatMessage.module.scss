@@ -1,4 +1,5 @@
-.chatMessageReceiver .chatMessageSender {
+.chatMessageReceiver,
+.chatMessageSender {
   box-sizing: border-box;
   padding: 15px;
   align-items: center;
@@ -32,6 +33,6 @@
 }
 
 .chatMessageTime {
-  margin: 0;
+  margin: 10px 0 0 75px;
   color: #b1b1b1;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Message } from '../../types/types';
+import Avatar from '../UI/Avatar/Avatar';
 import styles from './ChatMessage.module.scss';
 
 interface ChatMessageProps {
@@ -19,7 +20,7 @@ const ChatMessage = ({ message, userAvatar }: ChatMessageProps) => {
       }
     >
       <div className={styles.chatMessageMain}>
-        {!message.receiver || <img src={userAvatar} alt='' />}
+        {!message.receiver || <Avatar src={userAvatar} />}
         <div className={styles.chatMessageText}>{message.text}</div>
       </div>
       <p className={styles.chatMessageTime}>{parsedDate}</p>

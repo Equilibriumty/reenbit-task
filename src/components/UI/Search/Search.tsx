@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Search.module.css';
+import styles from './Search.module.scss';
 interface SearchProps {
   searchQuery: string;
   setSearchQuery: (searchQuery: string) => void;
@@ -11,7 +11,7 @@ const Search = ({ searchQuery, setSearchQuery }: SearchProps) => {
   };
 
   return (
-    <div>
+    <div className={styles.searchWrapper}>
       <input
         className={styles.search}
         value={searchQuery}

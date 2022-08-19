@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { DataContext } from '../../context/DataContext';
 import { Message, User } from '../../types/types';
 import ChatMessage from '../ChatMessage/ChatMessage';
+import Avatar from '../UI/Avatar/Avatar';
+import Input from '../UI/Input/Input';
 import styles from './ChatContainer.module.css';
 
 const ChatContainer = () => {
@@ -23,17 +25,20 @@ const ChatContainer = () => {
   return (
     <div className={styles.chatContainer}>
       <div className={styles.chatContainerHeader}>
-        <img src={currentUser.avatar} alt='' />
+        <Avatar src={currentUser.avatar} />
         <h1 className={styles.chatContainerUsername}>{currentUser.name}</h1>
       </div>
       <div className={styles.chatContainerMessages}>
-        {currentMessages.map((message) => (
+        {currentMessages.map((message, idx) => (
           <ChatMessage
+            key={idx}
             message={message}
             userAvatar={currentUser.avatar}
-            key={currentUser.id}
           />
         ))}
+      </div>
+      <div className={styles.chatContainerInput}>
+        <Input />
       </div>
     </div>
   );

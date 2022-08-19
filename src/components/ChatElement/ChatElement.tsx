@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Message, User } from '../../types/types';
+import Avatar from '../UI/Avatar/Avatar';
+import styles from './ChatElement.module.scss';
 
 interface ChatElementProps {
   specificUser: User;
@@ -21,21 +23,23 @@ const ChatElement = ({
     if (sortedMessages.length) {
       setLastMessage(sortedMessages[0]);
       const date = new Date(sortedMessages[0].time);
-      lastMessage.time = date.toLocaleString();
+      lastMessage.time = date.toDateString();
     }
   }, [lastMessage, specificUserMessages]);
+  console.log(lastMessage);
+  const parsedDate = new Date(lastMessage.time).toLocaleDateString();
 
   return (
-    <Link to={'/chats/' + specificUser.id}>
-      <div className='chatElement'>
-        <div className='chatElementInfo'>
-          <img src={specificUser.avatar} alt='' />
+    <Link to={'/chats/' + specificUser.id} className={styles.chatLink}>
+      <div className={styles.chatElement}>
+        <div className={styles.chatElementInfo}>
+          <Avatar src={specificUser.avatar} />
         </div>
-        <div className='chatElementDetails'>
-          <p className='detailsName'>{specificUser.name}</p>
-          <p className='detailsMessage'>{lastMessage.text}</p>
+        <div className={styles.chatElementDetails}>
+          <p className={styles.detailsName}>{specificUser.name}</p>
+          <p className={styles.detailsMessage}>{lastMessage.text}</p>
         </div>
-        <p className='detailsTime'>{lastMessage.time}</p>
+        <p className={styles.detailsTime}>{parsedDate}</p>
       </div>
     </Link>
   );

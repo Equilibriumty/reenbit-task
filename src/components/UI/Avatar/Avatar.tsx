@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Avatar.module.scss';
-
 interface AvatarProps {
   src: string;
 }

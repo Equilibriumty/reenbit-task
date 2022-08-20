@@ -12,7 +12,7 @@ export type User = {
 export type Message = {
   id: number;
   chatId: number;
-  receiver: boolean;
+  isReceiving: boolean;
   time: string;
   text: string;
 };

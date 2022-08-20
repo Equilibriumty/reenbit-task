@@ -1,6 +1,7 @@
 import React, { ChangeEvent, KeyboardEvent } from 'react';
 import { useParams } from 'react-router-dom';
 import { getRandomJoke } from '../../../api/getRandomJoke';
+import { SEND_MESSAGE_DELAY } from '../../../constants/constants';
 import { DataContext } from '../../../context/DataContext';
 import { Message } from '../../../types/types';
 import styles from './Input.module.scss';
@@ -16,17 +17,17 @@ const Input = () => {
       getRandomJoke().then((joke) => {
         setTimeout(() => {
           updateMessages(sendMessage(joke, true));
-        }, 1000);
+        }, SEND_MESSAGE_DELAY);
       });
       setInputValue('');
     }
   };
 
-  const sendMessage = (text: string, receiver: boolean = false): Message => {
+  const sendMessage = (text: string, isReceiving: boolean = false): Message => {
     return {
       id: new Date().getTime(),
       chatId: +id!,
-      receiver,
+      isReceiving,
       text,
       time: new Date().toLocaleString(),
     };

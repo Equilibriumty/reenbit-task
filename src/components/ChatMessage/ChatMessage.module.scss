@@ -1,4 +1,4 @@
-.chatMessageReceiver,
+.chatMessageisReceiving,
 .chatMessageSender {
   box-sizing: border-box;
   padding: 15px;
@@ -16,7 +16,7 @@
   }
 }
 
-.chatMessageReceiver {
+.chatMessageisReceiving {
   text-align: right;
 
   & .chatMessageText {

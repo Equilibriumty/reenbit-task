@@ -14,13 +14,13 @@ const ChatMessage = ({ message, userAvatar }: ChatMessageProps) => {
   return (
     <div
       className={
-        !message.receiver
-          ? styles.chatMessageReceiver
+        !message.isReceiving
+          ? styles.chatMessageisReceiving
           : styles.chatMessageSender
       }
     >
       <div className={styles.chatMessageMain}>
-        {!message.receiver || <Avatar src={userAvatar} />}
+        {!message.isReceiving || <Avatar src={userAvatar} />}
         <div className={styles.chatMessageText}>{message.text}</div>
       </div>
       <p className={styles.chatMessageTime}>{parsedDate}</p>

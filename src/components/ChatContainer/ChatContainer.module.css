@@ -32,8 +32,9 @@
   box-sizing: border-box;
   position: fixed;
   bottom: 0;
-  width: calc(100% - 400px);
+  width: calc(100% - 500px);
   padding: 30px 20px;
-  border-top: 1px #b1b1b1;
+  border-top: 1px #b1b1b1 solid;
+  border-left: 1px #b1b1b1 solid;
   background-color: #fafafa;
 }

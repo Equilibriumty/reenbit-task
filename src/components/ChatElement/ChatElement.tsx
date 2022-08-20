@@ -13,21 +13,20 @@ const ChatElement = ({
   specificUser,
   specificUserMessages,
 }: ChatElementProps) => {
-  const [lastMessage, setLastMessage] = React.useState<Message>({} as Message);
-
+  const [latestMessage, setLatestMessage] = React.useState<Message>(
+    {} as Message
+  );
+  const [latestMessageTime, setLatestMessageTime] = React.useState<string>('');
   useEffect(() => {
-    const sortedMessages = specificUserMessages.sort(
+    const sortedMessages = [...specificUserMessages].sort(
       (a, b) => new Date(b.time).getTime() - new Date(a.time).getTime()
     );
-
     if (sortedMessages.length) {
-      setLastMessage(sortedMessages[0]);
-      const date = new Date(sortedMessages[0].time);
-      lastMessage.time = date.toDateString();
+      setLatestMessage(sortedMessages[0]);
+      const date = new Date(sortedMessages[0].time).toDateString();
+      setLatestMessageTime(date);
     }
-  }, [lastMessage, specificUserMessages]);
-  console.log(lastMessage);
-  const parsedDate = new Date(lastMessage.time).toLocaleDateString();
+  }, [latestMessage, specificUserMessages]);
 
   return (
     <Link to={'/chats/' + specificUser.id} className={styles.chatLink}>
@@ -37,9 +36,10 @@ const ChatElement = ({
         </div>
         <div className={styles.chatElementDetails}>
           <p className={styles.detailsName}>{specificUser.name}</p>
-          <p className={styles.detailsMessage}>{lastMessage.text}</p>
+          <p className={styles.detailsMessage}>{latestMessage.text}</p>
         </div>
-        <p className={styles.detailsTime}>{parsedDate}</p>
+
+        <p className={styles.detailsTime}>{latestMessageTime}</p>
       </div>
     </Link>
   );

@@ -1,5 +1,5 @@
 .chatContainer {
-  margin-left: calc(100% - 70%);
+  margin-left: 500px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
   border-bottom: 1px solid #b1b1b1;
 }
 
-.chatBodyUsername {
+.chatContainerUsername {
   margin-left: 15px;
   font-weight: 400;
 }
@@ -27,7 +27,7 @@
   margin-bottom: 125px;
 }
 
-.chatMessageInput {
+.chatContainerInput {
   height: 125px;
   box-sizing: border-box;
   position: fixed;
